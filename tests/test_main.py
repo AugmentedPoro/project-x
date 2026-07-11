@@ -1,4 +1,4 @@
-from my_project.main import main
+from project_x.main import main
 
 
 def test_main_runs():

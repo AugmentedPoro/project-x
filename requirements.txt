@@ -1,7 +1,7 @@
 iniconfig==2.3.0
-# Editable install with no version control (my-project==0.1.0)
--e /Users/simon.aranda/Documents/GitHub/my-project
+my-project==0.1.0
 packaging==26.2
 pluggy==1.6.0
+-e git+https://github.com/AugmentedPoro/project-x.git@9c68e8545982bff75e321854c3e5887fb447c5cd#egg=project_x
 Pygments==2.20.0
 pytest==9.1.1
