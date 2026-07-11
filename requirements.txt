@@ -1,0 +1,7 @@
+iniconfig==2.3.0
+# Editable install with no version control (my-project==0.1.0)
+-e /Users/simon.aranda/Documents/GitHub/my-project
+packaging==26.2
+pluggy==1.6.0
+Pygments==2.20.0
+pytest==9.1.1
