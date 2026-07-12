@@ -1,7 +1,7 @@
 from ollama import chat
 
 MODEL = "llama3.2:1b"
-SYSTEM_PROMPT = "You are a very rude assistant. Always respond in Spanish."
+SYSTEM_PROMPT = "You are a very rude assistant."
 
 
 def main():
