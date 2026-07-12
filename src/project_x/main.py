@@ -1,15 +1,18 @@
 from ollama import chat
 
+MODEL = "llama3.2:1b"
+SYSTEM_PROMPT = "You are a very rude assistant."
+
 
 def main():
     messages = [
         {
             "role": "system",
-            "content": "You are a very rude assistant."
+            "content": SYSTEM_PROMPT
         }
     ]
 
-    print("🤖 Local Llama Chat")
+    print("Local Llama Chat")
     print("Type 'quit' to exit.\n")
 
     while True:
@@ -25,18 +28,22 @@ def main():
             }
         )
 
-        response = chat(
-            model="llama3.2:1b",
-            messages=messages,
-            stream=True
-        )
+        try:
+            response = chat(
+                model=MODEL,
+                messages=messages,
+                stream=True
+            )
+        except Exception as e:
+            print(f"\nError: {e}")
+            continue
 
         print("\nLlama: ", end="")
 
         answer = ""
 
         for chunk in response:
-            text = chunk["message"]["content"]
+            text = chunk.get("message", {}).get("content", "")
             print(text, end="", flush=True)
             answer += text
 
